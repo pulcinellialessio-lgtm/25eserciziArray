@@ -24,6 +24,7 @@
                     array1[i] = numero;
                 }
 
+                // stampa dei valori del vettore al contrario
                 for (int i = num - 1; i >= 0; i--)
                 {
                     Console.WriteLine("I numeri sono: " + array1[i]);
@@ -45,6 +46,8 @@
 
                     array2[i] = numero1;
                 }
+
+                // controlla e stampa i numeri pari
 
                 for (int i = 0; i < num1; i++)
                 {
@@ -72,10 +75,10 @@
                     array3[i] = numero2;
                 }
 
+                // controlla e stampa i numeri dispari
 
                 for (int i = 0; i < num2; i++)
                 {
-
                     if (array3[i] % 2 != 0)
                     {
                         Console.WriteLine("I numeri sono: " + array3[i]);
@@ -101,6 +104,8 @@
 
                 int p = 0, q = 0;
 
+                // conteggio valori pari e dispari
+
                 for (int i = 0; i < num3; i++)
                 {
                     if (array4[i] % 2 != 0)
@@ -112,6 +117,8 @@
                         q = q + 1;
                     }
                 }
+
+                // Stampa dei risultati
 
                 Console.WriteLine("I numeri pari sono: " + q);
                 Console.WriteLine("I numeri dispari sono: " + p);
@@ -137,6 +144,8 @@
                 int min = array5[0], max = array5[0], somma = 0, l = 0, indiceMin = 1000000, indiceMax = -1000000;
                 float media;
 
+                // Calcolo di minimo, massimo e somma necessaria per la media
+
                 for (int i = 1; i < num4; i++)
                 {
                     if (min > array5[i])
@@ -156,7 +165,11 @@
                     l = l + 1;
                 }
 
+                // Calcolo della media
+
                 media = somma / l;
+
+                // Stampa dei risultati
 
                 Console.WriteLine("Il numero minimo è: " + min + " nella posizione " + indiceMin);
                 Console.WriteLine("Il numero massimo è: " + max + " nella posicione " + indiceMax);
@@ -200,6 +213,9 @@
                         M++;
                     }
                 }
+
+                // creo i vettori e inserisco i valori
+
                 int[] vet1 = new int[m];
                 int[] vet2 = new int[M];
                 int indxvet1 = 0, indxvet2 = 0;
@@ -246,10 +262,14 @@
                     array7[i] = numero6;
                 }
 
+                // Input dei valori a e b
+
                 Console.WriteLine("Dimmi un numero");
                 int a = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Dimmi un altro numero");
                 int b = Convert.ToInt32(Console.ReadLine());
+
+                // controlla e stampa i numeri compresi tra a e b
 
                 for (int i = 0; i < num6; i++)
                 {
@@ -281,13 +301,21 @@
                 Console.WriteLine("Dimmi un altro numero");
                 int b = Convert.ToInt32(Console.ReadLine());
 
-                for(int i = 0; i < num7; i++)
+                int count = 0;
+
+                // Conta i numeri non compresi tra a e b
+
+                for (int i = 0; i < num7; i++)
                 {
                     if (array8[i] < a || array8[i] > b)
                     {
-                        Console.WriteLine("I numeri non compresi tra a e b sono: " + array8[i]);
+                        count++;
                     }
                 }
+
+                // Stampa il conteggio
+
+                Console.WriteLine("I numeri non compresi tra a e b sono: " + count);
             }
             else if(es == 9)
             {
@@ -306,6 +334,8 @@
                     array9[i] = numero8;
                 }
 
+                // Input dei valori a,b,c,d
+
                 Console.WriteLine("Dimmi un numero");   
                 int a = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Dimmi un altro numero");
@@ -316,7 +346,10 @@
                 int d = Convert.ToInt32(Console.ReadLine());
 
                 bool t = false;
-                for(int i = 0; i< num8; i++)
+
+                // controlla e stampa i numeri compresi tra a e b e poi tra c e d
+
+                for (int i = 0; i< num8; i++)
                 {
                     if (array9[i] >=a && array9[i] <= b)
                     {
@@ -347,6 +380,8 @@
                     array10[i] = numero9;
                 }
 
+                // Input dei valori a,b,c,d
+
                 Console.WriteLine("Dimmi un numero");
                 int a = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Dimmi un altro numero");
@@ -356,15 +391,19 @@
                 Console.WriteLine("Dimmi un altro numero");
                 int d = Convert.ToInt32(Console.ReadLine());
 
-                bool t = false, l = false;
+                int count = 0;
+
+                // Conta i numeri non compresi tra a e b e tra c e d
 
                 for (int i = 0; i < num9; i++)
                 {
                     if (array10[i] < a || array10[i] > b && array10[i] < c || array10[i] > d)
                     {
-                        Console.WriteLine("I numeri non compresi tra a e b e tra c e d sono: " + array10[i]);
+                        count++;
                     }
                 }
+
+                Console.WriteLine("I numeri non compresi tra a e b e tra c e d sono: " + count);
             }
         }
     }
