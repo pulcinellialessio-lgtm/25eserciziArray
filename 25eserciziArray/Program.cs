@@ -2,6 +2,80 @@
 {
     internal class Program
     {
+        static int countElements(int[] array, int x)
+        {
+            int count = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == x)
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine("Il numero " + x + " appare " + count + " volte nell'array.");
+            return count;
+        }
+        static bool contains(int[] array, int x)
+        {
+            int count = 0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == x)
+                {
+                    count++;
+                }
+            }
+
+            if(count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        static int findElements(int[] array, int x)
+        {
+            int count = 0;
+            for(int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == x)
+                {
+                    count = i;
+                }
+            }
+            if(count > 0)
+            {
+                Console.WriteLine("L'indice dell'elemento " + x + " è: " + count);
+                return count;
+            }
+            else
+            {
+                count = -1;
+                Console.WriteLine("L'elemento non è presente nell'array " + + count);
+                return count;
+            }
+            
+        }
+        static int[] copyArray(int[] array)
+        {
+            int[] array2 = new int[array.Length];
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                array2[i] = array[i];
+            }
+
+            Console.Write("Il secondo vettore è: ");
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array2[i]);
+            }
+            return array2;
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Che esercizio vuoi fare?");
@@ -178,19 +252,19 @@
             }
             else if (es == 6)
             {
-                int[] array6;
+                int[] array;
 
                 Console.WriteLine("Dimmi la dimensione del vettore");
-                int num5 = Convert.ToInt32(Console.ReadLine());
+                int num = Convert.ToInt32(Console.ReadLine());
 
-                array6 = new int[num5];
+                array = new int[num];
 
-                for (int i = 0; i < num5; i++)
+                for (int i = 0; i < num; i++)
                 {
                     Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
-                    int numero5 = Convert.ToInt32(Console.ReadLine());
+                    int numero = Convert.ToInt32(Console.ReadLine());
 
-                    array6[i] = numero5;
+                    array[i] = numero;
                 }
 
                 Console.WriteLine("dimmi un numero");
@@ -200,9 +274,9 @@
 
                 //conto i valori per determinare la lunghezza dei vettori
 
-                for (int i = 0; i < array6.Length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    if (array6[i] < x)
+                    if (array[i] < x)
                     {
 
                         m++;
@@ -220,16 +294,16 @@
                 int[] vet2 = new int[M];
                 int indxvet1 = 0, indxvet2 = 0;
 
-                for (int i = 0; i < array6.Length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    if (array6[i] < x)
+                    if (array[i] < x)
                     {
-                        vet1[indxvet1] = array6[i];
+                        vet1[indxvet1] = array[i];
                         indxvet1++;
                     }
                     else
                     {
-                        vet2[indxvet2] = array6[i];
+                        vet2[indxvet2] = array[i];
                         indxvet2++;
                     }
                 }
@@ -247,19 +321,19 @@
             }
             else if (es == 7)
             {
-                int[] array7;
+                int[] array;
 
                 Console.WriteLine("Dimmi la dimensione del vettore");
-                int num6 = Convert.ToInt32(Console.ReadLine());
+                int num = Convert.ToInt32(Console.ReadLine());
 
-                array7 = new int[num6];
+                array = new int[num];
 
-                for (int i = 0; i < num6; i++)
+                for (int i = 0; i < num; i++)
                 {
                     Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
-                    int numero6 = Convert.ToInt32(Console.ReadLine());
+                    int numero = Convert.ToInt32(Console.ReadLine());
 
-                    array7[i] = numero6;
+                    array[i] = numero;
                 }
 
                 // Input dei valori a e b
@@ -271,29 +345,29 @@
 
                 // controlla e stampa i numeri compresi tra a e b
 
-                for (int i = 0; i < num6; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    if (array7[i] >= a && array7[i] <= b)
+                    if (array[i] >= a && array[i] <= b)
                     {
-                        Console.WriteLine("I numeri compresi tra a e b sono: " + array7[i]);
+                        Console.WriteLine("I numeri compresi tra a e b sono: " + array[i]);
                     }
                 }
             }
-            else if(es == 8)
+            else if (es == 8)
             {
-                int[] array8;
+                int[] array;
 
                 Console.WriteLine("Dimmi la dimensione del vettore");
-                int num7 = Convert.ToInt32(Console.ReadLine());
+                int num = Convert.ToInt32(Console.ReadLine());
 
-                array8 = new int[num7];
+                array = new int[num];
 
-                for (int i = 0; i < num7; i++)
+                for (int i = 0; i < num; i++)
                 {
                     Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
-                    int numero7 = Convert.ToInt32(Console.ReadLine());
+                    int numero = Convert.ToInt32(Console.ReadLine());
 
-                    array8[i] = numero7;
+                    array[i] = numero;
                 }
 
                 Console.WriteLine("Dimmi un numero");
@@ -305,9 +379,9 @@
 
                 // Conta i numeri non compresi tra a e b
 
-                for (int i = 0; i < num7; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    if (array8[i] < a || array8[i] > b)
+                    if (array[i] < a || array[i] > b)
                     {
                         count++;
                     }
@@ -317,26 +391,26 @@
 
                 Console.WriteLine("I numeri non compresi tra a e b sono: " + count);
             }
-            else if(es == 9)
+            else if (es == 9)
             {
-                int[] array9;
+                int[] array;
 
                 Console.WriteLine("Dimmi la dimensione del vettore");
-                int num8 = Convert.ToInt32(Console.ReadLine());
+                int num = Convert.ToInt32(Console.ReadLine());
 
-                array9 = new int[num8];
+                array = new int[num];
 
-                for (int i = 0; i < num8; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    Console.WriteLine("Dimmi il " + (i+1) + "° valore");
-                    int numero8 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
+                    int numero = Convert.ToInt32(Console.ReadLine());
 
-                    array9[i] = numero8;
+                    array[i] = numero;
                 }
 
                 // Input dei valori a,b,c,d
 
-                Console.WriteLine("Dimmi un numero");   
+                Console.WriteLine("Dimmi un numero");
                 int a = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Dimmi un altro numero");
                 int b = Convert.ToInt32(Console.ReadLine());
@@ -349,35 +423,35 @@
 
                 // controlla e stampa i numeri compresi tra a e b e poi tra c e d
 
-                for (int i = 0; i< num8; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    if (array9[i] >=a && array9[i] <= b)
+                    if (array[i] >= a && array[i] <= b)
                     {
-                        Console.WriteLine("I numeri compresi tra a e b sono: " + array9[i]);
+                        Console.WriteLine("I numeri compresi tra a e b sono: " + array[i]);
                         t = true;
                     }
-                    
-                    if(t==true && array9[i] >= c && array9[i] <= d)
+
+                    if (t == true && array[i] >= c && array[i] <= d)
                     {
-                        Console.WriteLine("I numeri compresi tra c e d sono: " + array9[i]);
-                    }       
+                        Console.WriteLine("I numeri compresi tra c e d sono: " + array[i]);
+                    }
                 }
             }
             else if (es == 10)
             {
-                int[] array10;
+                int[] array;
 
                 Console.WriteLine("Dimmi la dimensione del vettore");
-                int num9 = Convert.ToInt32(Console.ReadLine());
+                int num = Convert.ToInt32(Console.ReadLine());
 
-                array10 = new int[num9];
+                array = new int[num];
 
-                for (int i = 0; i < num9; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    Console.WriteLine("Dimmi il " + (i+1) + "° valore");
-                    int numero9 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
+                    int numero = Convert.ToInt32(Console.ReadLine());
 
-                    array10[i] = numero9;
+                    array[i] = numero;
                 }
 
                 // Input dei valori a,b,c,d
@@ -395,15 +469,110 @@
 
                 // Conta i numeri non compresi tra a e b e tra c e d
 
-                for (int i = 0; i < num9; i++)
+                for (int i = 0; i < num; i++)
                 {
-                    if (array10[i] < a || array10[i] > b && array10[i] < c || array10[i] > d)
+                    if (array[i] < a || array[i] > b && array[i] < c || array[i] > d)
                     {
                         count++;
                     }
                 }
 
                 Console.WriteLine("I numeri non compresi tra a e b e tra c e d sono: " + count);
+            }
+            else if (es == 11)
+            {
+                int[] array;
+
+                Console.WriteLine("Dimmi la dimensione del vettore");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                array = new int[num];
+
+                for (int i = 0; i < num; i++)
+                {
+                    Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
+                    int numero = Convert.ToInt32(Console.ReadLine());
+
+                    array[i] = numero;
+                }
+
+                Console.WriteLine("Dimmi un numero da cercare");
+                int x = Convert.ToInt32(Console.ReadLine());
+
+                countElements(array, x);
+            }
+            else if (es == 12)
+            {
+                int[] array;
+
+                Console.WriteLine("Dimmi la dimensione del vettore");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                array = new int[num];
+
+                for (int i = 0; i < num; i++)
+                {
+                    Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
+                    int numero = Convert.ToInt32(Console.ReadLine());
+
+                    array[i] = numero;
+                }
+
+                Console.WriteLine("Dimmi un numero da cercare");
+                int x = Convert.ToInt32(Console.ReadLine());
+
+                if (contains(array, x) == true)
+                {
+                    Console.WriteLine("Il numero è presente nell'array.");
+                }
+                else
+                {
+                    Console.WriteLine("Il numero non è presente nell'array.");
+                }
+            }
+            else if (es == 13)
+            {
+                int[] array;
+
+                Console.WriteLine("Dimmi la dimensione del vettore");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                array = new int[num];
+
+                for (int i = 0; i < num; i++)
+                {
+                    Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
+                    int numero = Convert.ToInt32(Console.ReadLine());
+
+                    array[i] = numero;
+                }
+
+                Console.WriteLine("Dimmi un numero da cercare");
+                int x = Convert.ToInt32(Console.ReadLine());
+
+                findElements(array, x);
+            }
+            else if (es == 14)
+            {
+                int[] array;
+
+                Console.WriteLine("Dimmi la dimensione del vettore");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                array = new int[num];
+
+                int[] nuovoArray = new int[num];
+
+                for (int i = 0; i < num; i++)
+                {
+                    Console.WriteLine("Dimmi il " + (i + 1) + "° valore");
+                    int numero = Convert.ToInt32(Console.ReadLine());
+
+                    array[i] = numero;
+                }
+
+                copyArray(array);
+                
             }
         }
     }
